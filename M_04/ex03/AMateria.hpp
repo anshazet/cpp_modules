@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/31 07:26:29 by ashalagi          #+#    #+#             */
+/*   Updated: 2023/10/31 11:27:37 by ashalagi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
+
+#include <string>
+#include <iostream>
+#include "ICharacter.hpp"
+
+class ICharacter;
+
+class AMateria
+{
+protected:
+    std::string _type;
+public:
+    AMateria();
+    AMateria(std::string const & type);
+    AMateria(AMateria const & src);
+    virtual ~AMateria();
+
+    std::string const & getType() const;
+    virtual AMateria*   clone() const = 0;
+    virtual void        use(ICharacter& target);
+};
+
+#endif
+
+/*
+AMateria is an abstract class with a string attribute to store the type
+of materia and two virtual functions that should be implemented by derived classes
+*/
