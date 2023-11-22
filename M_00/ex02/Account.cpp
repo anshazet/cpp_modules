@@ -6,12 +6,14 @@
 /*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:50:41 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/09/20 13:01:12 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:04:06 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
+#include <iomanip>
 
 // Initialize static member variables
 int Account::_nbAccounts = 0;
@@ -125,11 +127,25 @@ void Account::displayStatus(void) const
               << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
-// Private method to display a timestamp (to be implemented)
+// Private method to display a timestamp
 void Account::_displayTimestamp(void)
 {
-    // This method should be implemented to display a timestamp
-    // You can use appropriate libraries to generate timestamps as needed
+    // Get current time
+    std::time_t now = std::time(0);
+    
+    // Convert it to tm struct
+    std::tm* now_tm = std::localtime(&now);
+
+    // Print the timestamp in the desired format
+    std::cout << "[" 
+              << (now_tm->tm_year + 1900)  // tm_year is years since 1900
+              << std::setw(2) << std::setfill('0') << (now_tm->tm_mon + 1) // tm_mon is months since January (0-11)
+              << std::setw(2) << std::setfill('0') << now_tm->tm_mday
+              << "_"
+              << std::setw(2) << std::setfill('0') << now_tm->tm_hour
+              << std::setw(2) << std::setfill('0') << now_tm->tm_min
+              << std::setw(2) << std::setfill('0') << now_tm->tm_sec
+              << "] ";
 }
 
 /*
@@ -142,4 +158,27 @@ on your requirements.
 Please note that the _displayTimestamp function is a placeholder for displaying
 timestamps, and you would need to implement it using appropriate libraries or methods
 to generate timestamps as per your desired format.
+
+Class Structure and Members:
+The Account class has both public methods and private member variables.
+Public methods include constructor, destructor, operations like deposits and withdrawals,
+and static functions to display account information.
+Private members keep track of individual account details
+(_accountIndex, _amount, _nbDeposits, _nbWithdrawals) and static variables for overall
+account statistics (_nbAccounts, _totalAmount, _totalNbDeposits, _totalNbWithdrawals).
+
+Static Members:
+Static members are shared among all instances of the Account class.
+They are used for maintaining the total number of accounts (_nbAccounts), the total amount
+across all accounts (_totalAmount), and the total number of deposits and withdrawals.
+
+Constructor and Destructor:
+The constructor initializes an account with a given initial deposit and updates static members.
+The destructor updates static members when an account is closed.
+
+Member Functions:
+Functions like makeDeposit and makeWithdrawal alter the account's state.
+displayStatus shows the current state of an account.
+Static functions (displayAccountsInfos, getNbAccounts, etc.) provide overall statistics
+about all accounts.
 */
