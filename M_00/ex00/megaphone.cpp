@@ -1,11 +1,14 @@
 #include <iostream>
+#include <string>
+#include <algorithm> // for std::transform
+#include <cctype> // for std::toupper
 
 int main (int ac, char **av)
 {
     if (ac > 1)
     {
         std::string msg;
-       for (int i = 1; i < ac; i++)
+        for (int i = 1; i < ac; i++)
         {
             msg.append(av[i]);
 //            if (i < ac -1)

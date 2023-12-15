@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:50:41 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/11/22 12:04:06 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:27:33 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,12 +132,12 @@ void Account::_displayTimestamp(void)
 {
     // Get current time
     std::time_t now = std::time(0);
-    
+
     // Convert it to tm struct
     std::tm* now_tm = std::localtime(&now);
 
     // Print the timestamp in the desired format
-    std::cout << "[" 
+    std::cout << "["
               << (now_tm->tm_year + 1900)  // tm_year is years since 1900
               << std::setw(2) << std::setfill('0') << (now_tm->tm_mon + 1) // tm_mon is months since January (0-11)
               << std::setw(2) << std::setfill('0') << now_tm->tm_mday

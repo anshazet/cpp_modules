@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 14:00:28 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/09/13 14:00:34 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/11/15 13:40:59 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Contact
         void    view(int index) const;
         void    display(int index) const;
         void    setIndex(int i);
-        
+
     private:
         std::string _firstName;
         std::string _lastName;
@@ -37,7 +37,7 @@ class Contact
 
         std::string _printLen(std::string str) const;
         std::string _getInput(std::string str) const;
-    
+
 };
 
 #endif

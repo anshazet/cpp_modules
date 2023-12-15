@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:14:18 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/07 16:28:49 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/15 10:28:40 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     std::string s2 = argv[3];
 
     // Open file for reading
-    std::ifstream file(filename);
+    std::ifstream file(filename.c_str()); // c_str() to convert to const char*
     if (!file.is_open())
 	{
         std::cerr << "Error opening file: " << filename << std::endl;
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     }
 
     // Write modified content to new file
-    std::ofstream outFile(filename + ".replace");
+    std::ofstream outFile((filename + ".replace").c_str());
     if (!outFile.is_open())
 	{
         std::cerr << "Error creating output file" << std::endl;

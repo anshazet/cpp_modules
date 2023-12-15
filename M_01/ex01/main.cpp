@@ -6,7 +6,7 @@
 /*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 14:47:44 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/05 09:15:56 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/13 12:30:02 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 {
     // Declare the number of zombies in the horde
     int numZombies = 3;
-    
+
     // Create a horde of zombies
     Zombie* horde = zombieHorde(numZombies, "Brain Eater");
 

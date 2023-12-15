@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 19:03:04 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/09/13 09:23:52 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/11/27 08:57:57 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(/* args */)
+PhoneBook::PhoneBook(): currentContactCount(0)
 {
 }
 
@@ -33,9 +33,20 @@ void    PhoneBook::welcome(void) const
     std::cout << std::endl;
 }
 
+void    PhoneBook::usage(void) const
+{
+    std::cout << std::endl;
+    std::cout << "--------------USAGE---------------" << std::endl;
+    std::cout << "ADD\t: To add a contact." << std::endl;
+    std::cout << "SEARCH\t: To search for a contact." << std::endl;
+    std::cout << "EXIT\t: to quite the PhoneBook." << std::endl;
+    std::cout << "----------------------------------" << std::endl;
+    std::cout << std::endl;
+}
+
 void    PhoneBook::addContact(void)
 {
-    static int  i; //i will retain its value between function calls
+    static int  i; //retain its value between function calls
 
     //init()is presumably responsible for initializing the contact with default values or prompting the user to enter contact information.
     this->_contacts[i % 8].init(); //this-> is a pointer that refers to the current instance (object) of a class within a member function. used to access a member of the current object
@@ -82,8 +93,18 @@ int PhoneBook::_readInput() const
 
 void    PhoneBook::search(void) const
 {
-    int i = this->_readInput();
-    this->_contacts[i].display(i);
+    int index = this->_readInput();
+
+    // Check if the index is within the range of the current contacts count
+    if (index >= 0 && index < this->currentContactCount)
+    {
+        this->_contacts[index].display(index);
+    }
+    else
+    {
+        std::cout << "Error, contact with index " << index << " does not exist." << std::endl;
+    }
+    this->_contacts[index].display(index);
 }
 
 

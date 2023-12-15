@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:12:01 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/09/13 14:01:01 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:33:00 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,28 @@ int main (void)
     book.welcome();
 
     //compare the contents of the input variable (which is a std::string) with the string literal "EXIT"
-    while (input.compare("EXIT")) 
+    while (true)
     {
-        if (input.compare("ADD") == 0)
+        std::cout << "> ";
+        std::getline(std::cin, input);
+
+        if (input == "ADD")
+        {
             book.addContact();
-        else if (input.compare("SEARCH") == 0)
+        }
+        else if (input == "SEARCH")
         {
             book.printContacts();
             book.search();
         }
-        std::cout << "> " << std::flush;
-        std::cin >> input;
+        else if (input == "EXIT")
+        {
+            break;
+        }
+        else
+        {
+            book.usage(); // Call usage function if input is not recognized
+        }
     }
 
     return (0);

@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 08:15:56 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/10 08:25:09 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/15 11:01:09 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 #include <iostream>
+#include <algorithm>
 #include <map>
 #include <cctype>  // for std::toupper
 
@@ -45,6 +46,7 @@ int main(int argc, char* argv[])
 
     if (levelMap.find(level) == levelMap.end()) {
         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+        std::cout << "Valid levels are: DEBUG, INFO, WARNING, ERROR" << std::endl;
         return 0;
     }
 

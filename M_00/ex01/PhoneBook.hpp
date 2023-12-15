@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 14:00:38 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/09/24 15:28:36 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/11/27 08:32:54 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define PHONEBOOK_HPP
 
 #include <vector>
+#include <limits>
 #include "Contact.hpp"
 
 class PhoneBook
@@ -22,6 +23,7 @@ class PhoneBook
         PhoneBook();
         ~PhoneBook();
     void    welcome(void) const;
+    void    usage(void) const;
     void    addContact(void);
     void    printContacts(void) const;
     void    search(void) const;
@@ -29,7 +31,8 @@ class PhoneBook
     private:
         Contact     _contacts[8];
     int         _readInput(void) const;
-    
+    int         currentContactCount;
+
 };
 
 #endif

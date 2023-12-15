@@ -6,7 +6,7 @@
 /*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 13:05:35 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/03 07:55:35 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/13 09:38:19 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main()
     // Delete the heap zombie to free the memory allocated on the heap
     delete heapZombie;
 
-    delete fooZombie; // Don't forget to delete the heap-allocated zombie
+    delete fooZombie;
 
     return 0;
 }

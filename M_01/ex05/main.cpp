@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 16:37:40 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/10 08:13:09 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/15 10:47:46 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int main()
 
     ToUpper toUpper;  // Function object to convert char to uppercase
 
+    std::cout << "Harl 2.0 Complaint System" << std::endl;
+    std::cout << "Enter a level (DEBUG, INFO, WARNING, ERROR) or press Enter to exit:" << std::endl;
     do
 	{
         std::cout << "Enter a level: ";
