@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:56:09 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/23 15:26:24 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:15:24 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class FragTrap : virtual public ClapTrap // virtual ensure that only one instanc
     	FragTrap();
     	FragTrap(std::string name);
     	~FragTrap();
-    
+
     	FragTrap(const FragTrap &);
     	FragTrap &operator=(const FragTrap& rhs);
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 14:53:28 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/20 16:15:55 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 14:00:50 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ScavTrap : public ClapTrap
         ScavTrap &operator=(const ScavTrap& rhs);
 
         void guardGate();
-    
+
         // Forward declarations for functions to access private attributes
         unsigned int    getHitPoints() const;
         void            setHitPoints(unsigned int hitPoints);

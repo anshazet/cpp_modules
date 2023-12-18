@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:39:29 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/19 12:48:47 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 14:00:41 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(void)
 
     std::cout << "\n--- GuardBot Attacking ---" << std::endl;
     scav.attack("Darth Vader");
-    clap.takeDamage(clap.getAttackDamage()); // Assuming you have a getter for _attackDamage
+    clap.takeDamage(clap.getAttackDamage());
     scav.displayStatus();
 	clap.displayStatus();
 

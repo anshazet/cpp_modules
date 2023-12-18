@@ -6,13 +6,12 @@
 /*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:03:34 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/12/18 10:36:12 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 12:32:54 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-#include "Point.hpp"
 #include <iostream>
 
 int main(void)

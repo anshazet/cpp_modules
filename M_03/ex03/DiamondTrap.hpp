@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:45:31 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/23 15:03:48 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:16:10 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
     	DiamondTrap(); // Default constructor
     	DiamondTrap(std::string name); // Parameterized constructor
     	~DiamondTrap(); // Destructor
-    
+
     	DiamondTrap(const DiamondTrap &src); // Copy constructor
     	DiamondTrap &operator=(const DiamondTrap &rhs); // Copy assignment operator
 

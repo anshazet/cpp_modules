@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 14:53:21 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/20 16:36:23 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 14:36:15 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap() : ClapTrap("Default_Scav")
 
 // Parameterized Constructor
 // Initializes the ScavTrap with the provided name and predefined attributes.
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) 
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
     setHitPoints(100);
     setEnergyPoints(50);
@@ -34,7 +34,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 // Destructor
 // Cleans up the ScavTrap object when it goes out of scope or is deleted.
-ScavTrap::~ScavTrap() 
+ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap destructor called" << std::endl;
 }

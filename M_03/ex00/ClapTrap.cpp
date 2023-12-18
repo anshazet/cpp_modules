@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:39:52 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/12 10:37:17 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 12:42:15 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : _name (name), _hitPoints(10), _energyPoints(10), _attackDamage(2)
+ClapTrap::ClapTrap(std::string name) : _name (name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap " << _name << " is coming!" << std::endl;
 }

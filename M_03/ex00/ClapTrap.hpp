@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:39:58 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/20 15:51:09 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 12:35:32 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define CLAPTRAP_HPP
 
 #include <iostream>
+#include <string>
+#include <cstdlib>
 
 class ClapTrap
 {
@@ -26,7 +28,7 @@ class ClapTrap
 		ClapTrap ();
 
 	public:
-		ClapTrap(std::string name); //constructor to instantiate a ClapTrap object with a specific name and initializes other attributes.
+		ClapTrap(std::string name); //constructor to instantiate a ClapTrap object with a specific name
 		~ClapTrap();
 
 		ClapTrap(const ClapTrap &); //Copy Constructor

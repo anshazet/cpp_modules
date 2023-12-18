@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:52:06 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/24 08:56:11 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:57:14 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CLAPTRAP_HPP
 
 #include <iostream>
+#include <cstdlib>
 
 class ClapTrap
 {
