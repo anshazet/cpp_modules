@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:52:28 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/31 13:06:29 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 10:33:38 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Point::Point( void ) : _x(0), _y(0)
 {
-	//std::cout << "Point default constructor calle" << std::endl;
+	//std::cout << "Point default constructor called" << std::endl;
 }
 
 Point::Point( const float x, const float y ) : _x(x), _y(y)
@@ -32,6 +32,7 @@ Point::~Point()
     //std::cout << "Point destructor called" << std::endl;
 }
 
+/*
 Point&  Point::operator=( const Point &rhs )
 {
     if ( this != &rhs )
@@ -43,6 +44,7 @@ Point&  Point::operator=( const Point &rhs )
     }
     return *this;
 }
+*/
 
 Fixed Point::getX( void ) const
 {
@@ -52,4 +54,10 @@ Fixed Point::getX( void ) const
 Fixed Point::getY( void ) const
 {
     return this->_y;
+}
+
+std::ostream &operator<<(std::ostream &out, const Point &point)
+{
+    out << "P(" << point.getX() << ", " << point.getY() << ")";
+    return out;
 }

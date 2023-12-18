@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:28:48 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/10 14:22:29 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:52:05 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ Fixed &Fixed::operator=(const Fixed &source)
 
 std::ostream &operator<<(std::ostream &out, const Fixed &source)
 {
-    out << static_cast<float>(source._fixedPointValue) / (1 << Fixed::_fractionalBits); // Adjust this line to output the format you want
+    out << static_cast<float>(source._fixedPointValue) / (1 << Fixed::_fractionalBits);
     return out;
 }
 

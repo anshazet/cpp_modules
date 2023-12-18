@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:13:03 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/10 13:24:12 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 08:20:10 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,3 @@ void Fixed::setRawBits(int const raw)
 {
     this->_fixedPointValue = raw;
 }
-
-
-
-// Other functions (getRawBits, setRawBits) remain the same as before.

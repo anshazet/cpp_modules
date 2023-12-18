@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:31:12 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/31 12:31:15 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:58:46 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ public:
     Fixed(const float floating);              // Constructor that takes a float
     Fixed(const Fixed &source);               // Copy constructor
     ~Fixed();                                 // Destructor
-    
+
     Fixed &operator=(const Fixed &source);    // Copy assignment operator
     friend std::ostream &operator<<(std::ostream &out, const Fixed &source); // Insertion operator overload
-    
+
     // Member functions
     int getRawBits(void) const;
     void setRawBits(int const raw);

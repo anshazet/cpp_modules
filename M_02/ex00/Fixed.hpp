@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 11:44:47 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/10 12:51:30 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 09:28:47 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
     Fixed(const Fixed &other);              // Copy constructor
     Fixed &operator=(const Fixed &other);   // Copy assignment operator
     ~Fixed();                               // Destructor
-    
+
     int getRawBits(void) const;             // Member function to get raw value
     void setRawBits(int const raw);         // Member function to set raw value
 };

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:44:00 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/31 13:07:32 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/18 10:00:41 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ float Fixed::toFloat(void) const
 {
     return static_cast<float>(_fixedPointValue) / (1 << _fractionalBits);
 }
-
-
 
 // Comparison Operators
 bool Fixed::operator>(const Fixed &other) const
