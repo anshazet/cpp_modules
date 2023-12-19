@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:25:29 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/25 09:36:02 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/19 12:44:18 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Dog::~Dog()
 
 Dog::Dog(const Dog &src) : Animal(src)
 {
-    brain = new Brain(*src.brain);
+    brain = new Brain(*src.brain);      // Deep copy: creating a new Brain object
     std::cout << "A dog has been copied!" << std::endl;
 }
 
@@ -35,8 +35,8 @@ Dog &Dog::operator=(const Dog &rhs)
 {
     if (this != &rhs)
     {
-        delete brain;
-        brain = new Brain(*rhs.brain);
+        delete brain;                   // First, delete the existing brain
+        brain = new Brain(*rhs.brain);  // Then, create a new Brain object (deep copy)
     }
     std::cout << "Dog assignment operator called!" << std::endl;
     return *this;

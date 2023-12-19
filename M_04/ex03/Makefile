@@ -6,7 +6,7 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= main
+FILES		= main AMateria Character Cure Ice MateriaSource
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))

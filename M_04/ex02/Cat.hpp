@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:25:17 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/27 11:01:06 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/19 12:48:35 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Cat : public AAnimal
 
 	public:
     	Cat();
-    	virtual ~Cat();		
-    	
+    	virtual ~Cat();
+
 		Cat(const Cat &src); // Copy constructor
     	Cat &operator=(const Cat &rhs); // Copy assignment operator
 

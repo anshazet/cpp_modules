@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:10:19 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/24 11:10:11 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/19 11:19:18 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-    
+
     const WrongAnimal* wrongMeta = new WrongAnimal();
     const WrongAnimal* wrongCat = new WrongCat();
 
@@ -36,11 +36,30 @@ int main()
 
     std::cout << wrongCat->getType() << " " << std::endl;
     wrongCat->makeSound(); // Will output the generic wrong animal sound because WrongCat doesn’t override it!
-    
+
+    // Additional tests for WrongCat
+    std::cout << "---- WrongCat Specific Tests ----" << std::endl;
+
+    // Directly create a WrongCat and make sound
+    WrongCat directWrongCat;
+    std::cout << "Direct WrongCat: ";
+    directWrongCat.makeSound();
+
+    // Pointing WrongAnimal pointer to WrongCat
+    const WrongAnimal* wrongCatPointer = new WrongCat();
+    std::cout << "WrongAnimal pointer to WrongCat: ";
+    wrongCatPointer->makeSound();
+    delete wrongCatPointer;
+
+    // WrongAnimal for comparison
+    WrongAnimal directWrongAnimal;
+    std::cout << "Direct WrongAnimal: ";
+    directWrongAnimal.makeSound();
+
     delete meta;
     delete j;
     delete i;
-    
+
     delete wrongMeta;
     delete wrongCat;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:12:37 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/24 10:51:44 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/19 10:09:36 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@ WrongCat &WrongCat::operator=(const WrongCat &rhs)
     WrongAnimal::operator=(rhs);
     return *this;
 }
-/*
+
 void WrongCat::makeSound() const
 {
     std::cout << "Pshhh pshhh!" << std::endl;
 }
-*/

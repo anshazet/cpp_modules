@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:10:54 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/27 10:59:10 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/19 12:47:33 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AAnimal
     public:
         AAnimal(); // Default constructor
         virtual ~AAnimal();    // Virtual destructor
-        
+
         AAnimal(const AAnimal &src); // Copy constructor
         AAnimal &operator=(const AAnimal &rhs); // Assignment operator
 

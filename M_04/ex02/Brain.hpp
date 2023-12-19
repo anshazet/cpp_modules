@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:08:06 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/24 12:11:11 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/19 12:48:23 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Brain
     	~Brain();
     	Brain(const Brain &src);
     	Brain &operator=(const Brain &rhs);
-    
+
     	std::string ideas[100];
 };
 

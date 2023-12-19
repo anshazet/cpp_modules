@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:04:58 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/24 10:55:59 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/19 10:10:11 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ class WrongCat : public WrongAnimal
 {
 	public:
     	WrongCat();
-    	virtual ~WrongCat() {};
+    	virtual ~WrongCat();
     	WrongCat(const WrongCat &src);
     	WrongCat &operator=(const WrongCat &rhs);
+
+        void makeSound() const;
 
 };
 

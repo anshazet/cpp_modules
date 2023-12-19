@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:10:19 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/25 09:38:51 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/19 12:31:43 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@
 int main()
 {
     const Animal* animals[5];
-    
+
     std::cout << "\033[1;32mCreating animals...\033[0m" << std::endl;
     for(int i = 0; i < 3; i++)  // loop iterates 3 times, creating 3 Dog objects 
     {
         animals[i] = new Dog();
         animals[i]->makeSound();
     }
-        
+
     for(int i = 3; i < 5; i++)  //loop iterates 2 times, creating 2 Cat objects
     {
         animals[i] = new Cat();

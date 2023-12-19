@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:25:25 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/25 08:31:58 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/19 12:33:10 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Dog : public Animal
 {
 	private:
     	Brain *brain;
-	
+
 	public:
     	Dog();
 		virtual ~Dog();
-		
+
     	Dog(const Dog &src);
     	Dog &operator=(const Dog &rhs);
 

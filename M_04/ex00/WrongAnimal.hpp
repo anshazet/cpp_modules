@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:04:07 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/24 11:05:34 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/19 11:15:36 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class WrongAnimal
     	WrongAnimal(const WrongAnimal &src); // Copy constructor
     	WrongAnimal &operator=(const WrongAnimal &rhs); // Assignment operator
 
-    	void makeSound() const;
+    	void makeSound() const; //not virtual WrongCat will make a sound WrongAnimal
     	std::string getType() const;
 };
 
