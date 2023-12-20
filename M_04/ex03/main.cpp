@@ -6,7 +6,7 @@
 /*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 07:26:23 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/12/20 12:36:14 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:58:16 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,59 @@ int main()
 	delete me;
 	delete src;
 
-	return 0;
 
+	std::cout << "--------------" << std::endl;
+
+	Character bob2("Bob");
+    ICharacter* jim = new Character("Jim");
+    IMateriaSource* src2 = new MateriaSource();
+    src2->learnMateria(new Ice());
+    src2->learnMateria(new Cure());
+
+    AMateria* ice = src2->createMateria("ice");
+    AMateria* ice2 = new Ice();
+    AMateria* ice3 = ice->clone();
+    AMateria* cure = new Cure();
+    AMateria* cure2 = src2->createMateria("cure");
+
+    bob2.equip(ice);
+    bob2.use(0, *jim);
+
+    bob2.equip(cure);
+    bob2.use(1, *jim);
+
+    bob2.equip(ice2);
+    bob2.equip(ice3);
+
+    bob2.unequip(1); // cure
+    bob2.unequip(0); // ice
+
+    bob2.equip(ice);
+    bob2.equip(ice2);
+    bob2.equip(ice3);
+    bob2.equip(cure);
+    bob2.equip(cure2);
+
+    bob2.use(0, bob2);
+    bob2.use(1, bob2);
+    bob2.use(2, bob2);
+    bob2.use(3, bob2);
+    bob2.use(4, bob2);
+
+    bob2.unequip(0);
+    bob2.unequip(1);
+    bob2.unequip(2);
+    bob2.unequip(3);
+    bob2.unequip(4);
+
+    delete ice;
+    delete ice2;
+    delete ice3;
+    delete cure;
+    delete cure2;
+    delete jim;
+    delete src2;
+
+	return 0;
 }
 
