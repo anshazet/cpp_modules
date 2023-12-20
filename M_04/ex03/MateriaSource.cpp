@@ -6,7 +6,7 @@
 /*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 09:38:21 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/12/20 11:12:11 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:09:06 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 // Default constructor
 MateriaSource::MateriaSource()
 {
+    // call constructor
     for (int i = 0; i < 4; ++i)
     {
         materias[i] = NULL;
