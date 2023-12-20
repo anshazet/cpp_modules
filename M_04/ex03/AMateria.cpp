@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 07:26:33 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/31 11:27:44 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/20 11:38:02 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 AMateria::AMateria( void ) : _type("")
 {
@@ -35,11 +36,6 @@ AMateria::~AMateria( void )
 std::string const & AMateria::getType() const
 {
     return this->_type;
-}
-
-AMateria* AMateria::clone() const
-{
-    return (AMateria*)this;
 }
 
 void    AMateria::use( ICharacter& target )

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 09:29:30 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/10/31 10:35:05 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/20 10:51:42 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,13 @@
 class Cure : public AMateria
 {
 public:
-    Cure() : AMateria("cure") {}
+    Cure();
+    Cure(const Cure &src);            // Copy constructor
+    Cure &operator=(const Cure &rhs); // Copy assignment operator
+    virtual ~Cure();                  // Destructor
 
-    AMateria* clone() const override
-	{
-        return new Cure(*this);
-    }
-
-    void use(ICharacter& target) override
-	{
-        std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
-    }
+    AMateria *clone() const;
+    void use(ICharacter &target);
 };
 
 #endif

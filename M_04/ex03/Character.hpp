@@ -6,7 +6,7 @@
 /*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 09:45:38 by ashalagi          #+#    #+#             */
-/*   Updated: 2023/12/19 13:46:17 by ashalagi         ###   ########.fr       */
+/*   Updated: 2023/12/20 10:54:11 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,23 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
-#include <array>
 
 class Character : public ICharacter
 {
 private:
     std::string name;
-    std::array<AMateria*, 4> inventory;
+    AMateria *inventory[4];
 
 public:
-    Character(std::string const & name) : name(name) {
-        inventory.fill(nullptr);
-    }
+    Character(std::string const &name);
+    Character(const Character &src);            // Copy constructor
+    Character &operator=(const Character &rhs); // Copy assignment operator
+    virtual ~Character();                       // Destructor
 
-    std::string const & getName() const override {
-        return name;
-    }
-
-    void equip(AMateria* m) override {
-        for (auto & materia : inventory) {
-            if (!materia) {
-                materia = m;
-                break;
-            }
-        }
-    }
-
-    void unequip(int idx) override {
-        if (idx >= 0 && idx < 4) {
-            inventory[idx] = nullptr;
-        }
-    }
-
-    void use(int idx, ICharacter& target) override {
-        if (idx >= 0 && idx < 4 && inventory[idx]) {
-            inventory[idx]->use(target);
-        }
-    }
+    std::string const &getName() const;
+    void equip(AMateria *m);
+    void unequip(int idx);
+    void use(int idx, ICharacter &target);
 };
 
 #endif
