@@ -6,53 +6,52 @@
 /*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 09:50:49 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/02 14:52:46 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/03 13:58:33 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
     try
     {
-        Bureaucrat highRankBureaucrat("Alice", 10); // High rank
-        Bureaucrat lowRankBureaucrat("Bob", 60); // Low rank
+        // Create bureaucrats
+        Bureaucrat chief("Chief", 1); // High-ranked bureaucrat
+        Bureaucrat intern("Intern", 150); // Low-ranked bureaucrat
 
-        Form highRankForm("TopSecret", 5, 1); // Requires high rank to sign
-        Form lowRankForm("Standard", 50, 30); // Requires lower rank to sign
+        // Create forms
+        ShrubberyCreationForm shrubForm("Shrubby");
+        RobotomyRequestForm robotForm("Robot");
+        PresidentialPardonForm pardonForm("President");
 
-        std::cout << highRankBureaucrat << std::endl;
-        std::cout << lowRankBureaucrat << std::endl;
-        std::cout << highRankForm << std::endl;
-        std::cout << lowRankForm << std::endl;
+        // Chief attempts to sign all forms
+        chief.signForm(shrubForm);
+        chief.signForm(robotForm);
+        chief.signForm(pardonForm);
 
-        // High rank bureaucrat attempts to sign low rank form
-        highRankBureaucrat.signForm(lowRankForm);
+        // Intern attempts to execute all forms (expected to fail)
+        intern.executeForm(shrubForm);
+        intern.executeForm(robotForm);
+        intern.executeForm(pardonForm);
 
-        // Low rank bureaucrat attempts to sign high rank form
-        lowRankBureaucrat.signForm(highRankForm);
+        // Chief attempts to execute all forms
+    //    chief.executeForm(shrubForm);
+        chief.executeForm(robotForm);
+        chief.executeForm(pardonForm);
 
-        std::cout << "After signing attempts:" << std::endl;
-        std::cout << highRankForm << std::endl;
-        std::cout << lowRankForm << std::endl;
+
+
     }
-    catch (std::exception &e)
+    catch (std::exception& e)
     {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    }
-
-    try
-    {
-        // Trying to create a form with invalid grades
-        Form invalidForm("Invalid", 0, 160);
-    }
-    catch (std::exception &e)
-    {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+        std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     return 0;
 }
+

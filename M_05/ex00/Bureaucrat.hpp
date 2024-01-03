@@ -6,7 +6,7 @@
 /*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 09:15:34 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/02 09:57:50 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/03 08:19:15 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Bureaucrat
 {
 private:
-    const std::string _name;
-    int _grade;
+    const   std::string _name;
+    int     _grade;
 
     static const int highestGrade = 1;
     static const int lowestGrade = 150;
@@ -31,10 +31,10 @@ public:
     Bureaucrat &operator=(const Bureaucrat &other);  // Assignment operator overload
     ~Bureaucrat();
 
-    const std::string &getName() const;
-    int getGrade() const;
-    void incrementGrade();
-    void decrementGrade();
+    const   std::string &getName() const;
+    int     getGrade() const;
+    void    incrementGrade();
+    void    decrementGrade();
 
     // Nested class for handling exceptions when the grade is too high.
     class GradeTooHighException : public std::exception
