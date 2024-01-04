@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 14:54:35 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/03 09:43:06 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:18:36 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include "AForm.hpp"
 #include <string>
+#include <fstream>
+#include <iostream>
 
 class ShrubberyCreationForm : public AForm
 {

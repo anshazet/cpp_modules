@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 10:15:46 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/02 13:21:00 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:36:36 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,18 @@ int Form::getGradeToExecute() const
 
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
+    // Check if the form is already signed
+    if (_isSigned)
+    {
+        std::cout << "Form '" << _name << "' is already signed." << std::endl;
+        return;
+    }
+
+    // Check if the bureaucrat's grade is high enough to sign the form
     if (bureaucrat.getGrade() <= _gradeToSign)
     {
         _isSigned = true;
+        std::cout << "Form '" << _name << "' is now signed by " << bureaucrat.getName() << "." << std::endl;
     }
     else
     {

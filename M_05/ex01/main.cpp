@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 09:50:49 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/02 14:52:25 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:41:45 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ int main()
     try
     {
         Bureaucrat highRankBureaucrat("Alice", 10); // High rank
+        Bureaucrat middleRankBureaucrat("Max", 30); // Middle rank
         Bureaucrat lowRankBureaucrat("Bob", 60); // Low rank
 
         Form highRankForm("TopSecret", 5, 1); // Requires high rank to sign
         Form lowRankForm("Standard", 50, 30); // Requires lower rank to sign
 
         std::cout << highRankBureaucrat << std::endl;
+        std::cout << middleRankBureaucrat << std::endl;
         std::cout << lowRankBureaucrat << std::endl;
         std::cout << highRankForm << std::endl;
         std::cout << lowRankForm << std::endl;
@@ -34,6 +36,8 @@ int main()
 
         // Low rank bureaucrat attempts to sign high rank form
         lowRankBureaucrat.signForm(highRankForm);
+
+        middleRankBureaucrat.signForm(lowRankForm);
 
         std::cout << "After signing attempts:" << std::endl;
         std::cout << highRankForm << std::endl;

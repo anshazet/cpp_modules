@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 09:50:49 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/03 13:58:33 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/04 11:01:18 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main()
         intern.executeForm(pardonForm);
 
         // Chief attempts to execute all forms
-    //    chief.executeForm(shrubForm);
+        chief.executeForm(shrubForm);
         chief.executeForm(robotForm);
         chief.executeForm(pardonForm);
 

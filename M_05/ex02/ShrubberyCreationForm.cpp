@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 14:55:27 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/03 13:09:34 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:24:35 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
         throw AForm::GradeTooLowException();
     }
 
-    std::ofstream file(_target + "_shrubbery.txt");
+    std::ofstream file((_target + "_shrubbery.txt").c_str());
     if (file)
     {
         file << "            &&  & " << std::endl;
@@ -63,7 +63,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
         file << "             |||" << std::endl;
         file << "             |||" << std::endl;
         file << "       , -=-~  .-^- _" << std::endl;
-        
+
         file.close();
         std::cout << "Created a file with ASCII trees: " << _target << "_shrubbery.txt" << std::endl;
     }
