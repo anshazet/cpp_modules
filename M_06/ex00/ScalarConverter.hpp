@@ -6,7 +6,7 @@
 /*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:35:46 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/05 06:51:21 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/05 08:36:47 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ private:
     ScalarConverter();
     ScalarConverter(const ScalarConverter &);
     ScalarConverter &operator=(const ScalarConverter &);
+    ~ScalarConverter();
 
     // Helper methods for conversion and output.
     static void convertChar(const std::string &literal);
