@@ -1,4 +1,4 @@
-NAME		= Bureaucrat
+NAME		= ScalarConverter
 
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98

@@ -6,7 +6,7 @@
 /*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:35:42 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/04 15:05:27 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/05 07:51:47 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,53 +125,36 @@ void ScalarConverter::convertInt(const std::string &literal)
 
 void ScalarConverter::convertFloat(const std::string &literal)
 {
-	// Convert the literal to a float
-	std::istringstream iss(literal);
-	float value;
-	if (!(iss >> value))
-	{
-		std::cerr << "Error: Invalid float literal" << std::endl;
-		return;
-	}
+    try {
+        float value = std::stof(literal);
 
-	// Check for special float values (nan, inf)
-	if (std::isnan(value))
-	{
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: nanf" << std::endl;
-		std::cout << "double: nan" << std::endl;
-		return;
-	}
-	if (std::isinf(value))
-	{
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: " << (value < 0 ? "-inff" : "+inff") << std::endl;
-		std::cout << "double: " << (value < 0 ? "-inf" : "+inf") << std::endl;
-		return;
-	}
+        // Special float values (nan, inf) are handled here
+        if (std::isnan(value) || std::isinf(value)) {
+            handleSpecialCases(value, "float");
+            return;
+        }
 
-	// Convert to char
-	std::cout << "char: ";
-	if (isPrintable(static_cast<char>(value)))
-	{
-		std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
-	}
-	else
-	{
-		std::cout << "Non displayable" << std::endl;
-	}
+        // Convert to char
+        std::cout << "char: ";
+        if (isPrintable(static_cast<char>(value))) {
+            std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
+        } else {
+            std::cout << "Non displayable" << std::endl;
+        }
 
-	// Convert to int
-	std::cout << "int: " << static_cast<int>(value) << std::endl;
+        // Convert to int
+        std::cout << "int: " << static_cast<int>(value) << std::endl;
 
-	// Print as float
-	std::cout << "float: " << value << "f" << std::endl;
+        // Print as float
+        std::cout << "float: " << value << "f" << std::endl;
 
-	// Convert to double
-	std::cout << "double: " << static_cast<double>(value) << std::endl;
+        // Convert to double
+        std::cout << "double: " << static_cast<double>(value) << std::endl;
+    } catch (const std::exception&) {
+        std::cerr << "Error: Invalid float literal" << std::endl;
+    }
 }
+
 
 void ScalarConverter::convertDouble(const std::string &literal)
 {
@@ -185,20 +168,13 @@ void ScalarConverter::convertDouble(const std::string &literal)
 	}
 
 	// Check for special double values (nan, inf)
-	if (std::isnan(value))
+	if (std::isnan(value) || std::isinf(value))
 	{
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: nanf" << std::endl;
-		std::cout << "double: nan" << std::endl;
-		return;
-	}
-	if (std::isinf(value))
-	{
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: " << (value < 0 ? "-inff" : "+inff") << std::endl;
-		std::cout << "double: " << (value < 0 ? "-inf" : "+inf") << std::endl;
+		// Don't call handleSpecialCases if isFloat(literal) is true
+		if (!isFloat(literal))
+		{
+			handleSpecialCases(value, "double");
+		}
 		return;
 	}
 
@@ -272,67 +248,43 @@ bool ScalarConverter::isInt(const std::string &literal)
 
 bool ScalarConverter::isFloat(const std::string &literal)
 {
-    std::istringstream iss(literal);
-    float value;
-    char leftover;
-    if ((iss >> value) && !(iss >> leftover))
+	if (literal == "nanf" || literal == "+inff" || literal == "-inff")
 	{
-        // Check if the last character is 'f' or 'F'
-        return literal.find('.') != std::string::npos && 
-               (literal.back() == 'f' || literal.back() == 'F');
-    }
-    return false;
+		return true;
+	}
+	return literal.length() > 1 &&
+		   (literal.back() == 'f' || literal.back() == 'F') &&
+		   literal.find('.') != std::string::npos;
 }
 
 bool ScalarConverter::isDouble(const std::string &literal)
 {
-    std::istringstream iss(literal);
-    double value;
-    char leftover;
-    if ((iss >> value) && !(iss >> leftover))
+	if (literal == "nan" || literal == "+inf" || literal == "-inf")
 	{
-        // Successfully read a double and no leftover characters
-        return literal.find('.') != std::string::npos;
-    }
-    return false;
+		return true;
+	}
+	if (literal.find('.') != std::string::npos &&
+		(literal.back() != 'f' && literal.back() != 'F'))
+	{
+		std::istringstream iss(literal);
+		double value;
+		return (iss >> value);
+	}
+	return false;
 }
 
-/*
-#include <stdexcept> // Include for std::invalid_argument
-
-bool ScalarConverter::isInt(const std::string &literal)
+void ScalarConverter::handleSpecialCases(double value, const std::string &type)
 {
-    std::istringstream iss(literal);
-    int value;
-    char leftover;
-    if ((iss >> value) && !(iss >> leftover)) {
-        return true;
-    }
-    throw std::invalid_argument("Invalid integer literal: " + literal);
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: impossible" << std::endl;
+	if (type == "float")
+	{
+		std::cout << "float: " << (std::isinf(value) ? (value < 0 ? "-inff" : "+inff") : "nanf") << std::endl;
+		std::cout << "double: " << (std::isinf(static_cast<double>(value)) ? (value < 0 ? "-inf" : "+inf") : "nan") << std::endl;
+	}
+	else if (type == "double")
+	{
+		std::cout << "float: " << (std::isinf(static_cast<float>(value)) ? (value < 0 ? "-inff" : "+inff") : "nanf") << std::endl;
+		std::cout << "double: " << (std::isinf(value) ? (value < 0 ? "-inf" : "+inf") : "nan") << std::endl;
+	}
 }
-
-bool ScalarConverter::isFloat(const std::string &literal)
-{
-    std::istringstream iss(literal);
-    float value;
-    char leftover;
-    if ((iss >> value) && !(iss >> leftover) && literal.find('.') != std::string::npos && 
-        (literal.back() == 'f' || literal.back() == 'F')) {
-        return true;
-    }
-    throw std::invalid_argument("Invalid float literal: " + literal);
-}
-
-bool ScalarConverter::isDouble(const std::string &literal)
-{
-    std::istringstream iss(literal);
-    double value;
-    char leftover;
-    if ((iss >> value) && !(iss >> leftover) && literal.find('.') != std::string::npos) {
-        return true;
-    }
-    throw std::invalid_argument("Invalid double literal: " + literal);
-}
-
-
-*/
