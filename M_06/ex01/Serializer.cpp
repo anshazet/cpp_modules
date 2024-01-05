@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 08:23:39 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/05 08:53:40 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:03:37 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ Serializer& Serializer::operator=(const Serializer&)
 // Destructor
 Serializer::~Serializer() {}
 
-uintptr_t Serializer::serialize(Data *ptr)
+void* Serializer::serialize(Data *ptr)
 {
-    return reinterpret_cast<uintptr_t>(ptr);
+    return static_cast<void*>(ptr);
 }
 
-Data *Serializer::deserialize(uintptr_t raw)
+Data* Serializer::deserialize(void* raw)
 {
-    return reinterpret_cast<Data *>(raw);
+    return static_cast<Data*>(raw);
 }
 

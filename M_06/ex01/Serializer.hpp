@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 08:23:42 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/05 08:47:09 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:03:20 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 #define SERIALIZER_HPP
 
 #include "Data.hpp"
-#include <cstdint>
 
 class Serializer
 {
 public:
-    static uintptr_t	serialize(Data* ptr);
-    static				Data* deserialize(uintptr_t raw);
+    static void* serialize(Data* ptr);
+    static Data* deserialize(void* raw);
 
 private:
     // Private constructor and assignment operator to prevent instantiation.

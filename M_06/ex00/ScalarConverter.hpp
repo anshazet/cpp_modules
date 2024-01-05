@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:35:46 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/05 08:36:47 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/05 13:34:53 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ private:
     static bool isDouble(const std::string &literal);
     static bool isPrintable(char c);
     static void handleSpecialCases(double value, const std::string &type);
+    static void displayConversions(double value);
 };
 
 #endif // SCALARCONVERTER_HPP

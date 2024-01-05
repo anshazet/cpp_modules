@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 09:04:47 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/05 09:14:16 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:12:36 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <typeinfo>
 
 /*
 The generate function creates an instance of A, B, or C
@@ -34,7 +35,7 @@ Base *generate(void)
 	case 2:
 		return new C();
 	}
-	return nullptr;
+	return NULL;
 }
 
 /*

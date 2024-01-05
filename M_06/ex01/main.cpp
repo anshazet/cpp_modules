@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 08:23:35 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/05 08:30:48 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:03:51 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Serializer.hpp"
+#include <iostream>
 
 #include "Serializer.hpp"
 #include <iostream>
@@ -21,7 +24,7 @@ int main()
     std::cout << "Original pointer: " << dataPtr << std::endl;
 
     // Serialize
-    uintptr_t serializedData = Serializer::serialize(dataPtr);
+    void* serializedData = Serializer::serialize(dataPtr);
     std::cout << "Serialized data: " << serializedData << std::endl;
 
     // Deserialize
@@ -30,13 +33,14 @@ int main()
 
     // Compare
     if (dataPtr == deserializedData)
-	{
+    {
         std::cout << "Success: Original and deserialized pointers are equal." << std::endl;
     }
-	else
-	{
+    else
+    {
         std::cout << "Error: Pointers are not equal." << std::endl;
     }
 
     return 0;
 }
+
