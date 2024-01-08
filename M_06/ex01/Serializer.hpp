@@ -6,7 +6,7 @@
 /*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 08:23:42 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/05 14:03:20 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:45:58 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class Serializer
 {
 public:
-    static void* serialize(Data* ptr);
-    static Data* deserialize(void* raw);
+    static std::size_t serialize(Data* ptr);
+    static Data* deserialize(std::size_t raw);
 
 private:
     // Private constructor and assignment operator to prevent instantiation.

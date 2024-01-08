@@ -6,29 +6,26 @@
 /*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 08:23:35 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/05 14:03:51 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:46:55 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 #include <iostream>
 
-#include "Serializer.hpp"
-#include <iostream>
-
 int main()
 {
-    Data myData = { "John Smith", 30 };
-    Data* dataPtr = &myData;
+    Data myData = {"John Smith", 30};
+    Data *dataPtr = &myData;
 
     std::cout << "Original pointer: " << dataPtr << std::endl;
 
     // Serialize
-    void* serializedData = Serializer::serialize(dataPtr);
+    std::size_t serializedData = Serializer::serialize(dataPtr);
     std::cout << "Serialized data: " << serializedData << std::endl;
 
     // Deserialize
-    Data* deserializedData = Serializer::deserialize(serializedData);
+    Data *deserializedData = Serializer::deserialize(serializedData);
     std::cout << "Deserialized pointer: " << deserializedData << std::endl;
 
     // Compare
@@ -43,4 +40,3 @@ int main()
 
     return 0;
 }
-

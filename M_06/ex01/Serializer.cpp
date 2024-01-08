@@ -6,7 +6,7 @@
 /*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 08:23:39 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/05 14:03:37 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:46:20 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,12 @@ Serializer& Serializer::operator=(const Serializer&)
 // Destructor
 Serializer::~Serializer() {}
 
-void* Serializer::serialize(Data *ptr)
+std::size_t Serializer::serialize(Data *ptr)
 {
-    return static_cast<void*>(ptr);
+    return reinterpret_cast<std::size_t>(ptr);
 }
 
-Data* Serializer::deserialize(void* raw)
+Data *Serializer::deserialize(std::size_t raw)
 {
-    return static_cast<Data*>(raw);
+    return reinterpret_cast<Data *>(raw);
 }
-
