@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 10:44:48 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/05 10:45:12 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/09 09:09:40 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 // Default constructor
 template <typename T>
-Array<T>::Array() : _elements(nullptr), _size(0) {}
+Array<T>::Array() : _elements(NULL), _size(0) {}
 
 // Constructor with size
 template <typename T>

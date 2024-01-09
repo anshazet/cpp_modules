@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 10:37:13 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/05 11:15:22 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/09 11:29:19 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main()
 
 		for (unsigned int i = 0; i < intArray.size(); ++i)
 		{
-			std::cout << intArray[i] << " ";
+            std::cout << intArray[i] << " ";
 		}
 		std::cout << std::endl;
 
