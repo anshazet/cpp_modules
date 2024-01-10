@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:45:03 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/09 14:51:17 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/10 08:04:04 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,11 @@ int main()
     std::stack<int> s(mstack);
     return 0;
 }
+
+/*
+The stack initially contains 5 and 17 (with 17 at the top). After popping
+the top element (17), 5 remains.
+You then push 3, 5, 737, and 0 onto the stack.
+When iterating from the beginning (begin()) to the end (end()),
+the elements are printed in the order 5 (bottom), 3, 5, 737, and 0 (top).
+*/

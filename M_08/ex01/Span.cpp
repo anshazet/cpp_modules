@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:41:28 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/09 14:32:04 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/10 07:58:41 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,70 @@ void Span::addNumber(int number)
     numbers.push_back(number);
 }
 
+/*
+This method iterates through each pair of elements in the numbers vector.
+It calculates the absolute difference (span) between each pair of elements.
+If this span is smaller than the current min_span, it updates min_span.
+This method has a time complexity of O(N²), where N is the number of elements
+in the Span. It can be more efficient than sorting for very large datasets,
+but it is less efficient for smaller datasets.
+*/
 int Span::shortestSpan() const
 {
     if (numbers.size() < 2)
     {
-        throw std::length_error("Not enough elements in Span");
+        throw std::length_error("Span must contain at least two elements to calculate");
+    }
+
+    int min_span = std::numeric_limits<int>::max();
+    for (size_t i = 0; i < numbers.size() - 1; ++i)
+    {
+        for (size_t j = i + 1; j < numbers.size(); ++j)
+        {
+            int span = std::abs(numbers[i] - numbers[j]);
+            if (span < min_span)
+            {
+                min_span = span;
+            }
+        }
+    }
+
+    return min_span;
+}
+
+int Span::longestSpan() const
+{
+    if (numbers.size() < 2)
+    {
+        throw std::length_error("Span must contain at least two elements to calculate");
+    }
+
+    int min_elem = *std::min_element(numbers.begin(), numbers.end());
+    int max_elem = *std::max_element(numbers.begin(), numbers.end());
+
+    return max_elem - min_elem;
+}
+
+
+/*
+shortestSpan() and longestSpan()
+These methods compute the shortest and longest spans (differences)
+between the elements in the container. They work with the data
+stored in the container to calculate these values.
+
+For shortestSpan(), a copy of the container is sorted to find the
+minimum difference between consecutive elements:
+
+For longestSpan(), the method finds the maximum and minimum
+elements in the container:
+*/
+
+/*
+int Span::shortestSpan() const
+{
+    if (numbers.size() < 2)
+    {
+        throw std::length_error("Span must contain at least two elements to calculate");
     }
 
     std::vector<int> sorted(numbers);
@@ -71,29 +130,4 @@ int Span::shortestSpan() const
 
     return min_span;
 }
-
-int Span::longestSpan() const
-{
-    if (numbers.size() < 2)
-    {
-        throw std::length_error("Not enough elements in Span");
-    }
-
-    int min_elem = *std::min_element(numbers.begin(), numbers.end());
-    int max_elem = *std::max_element(numbers.begin(), numbers.end());
-
-    return max_elem - min_elem;
-}
-
-/*
-shortestSpan() and longestSpan()
-These methods compute the shortest and longest spans (differences)
-between the elements in the container. They work with the data
-stored in the container to calculate these values.
-
-For shortestSpan(), a copy of the container is sorted to find the
-minimum difference between consecutive elements:
-
-For longestSpan(), the method finds the maximum and minimum
-elements in the container:
 */
