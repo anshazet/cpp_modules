@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:41:28 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/10 07:58:41 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/11 09:19:48 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ it just sets a limit on how many elements can be added.
 */
 Span::Span(unsigned int N) : max_size(N) {}
 
-Span::Span(const Span& other) : numbers(other.numbers), max_size(other.max_size) {}
+Span::Span(const Span &other) : numbers(other.numbers), max_size(other.max_size) {}
 
-Span& Span::operator=(const Span& other)
+Span &Span::operator=(const Span &other)
 {
-    if (this != &other)
+	if (this != &other)
 	{
-        numbers = other.numbers;
-        max_size = other.max_size;
-    }
-    return *this;
+		numbers = other.numbers;
+		max_size = other.max_size;
+	}
+	return *this;
 }
 
 Span::~Span() {}
@@ -42,11 +42,11 @@ it checks whether there is enough space left in the container.
 */
 void Span::addNumber(int number)
 {
-    if (numbers.size() >= max_size)
-    {
-        throw std::length_error("Span is already full");
-    }
-    numbers.push_back(number);
+	if (numbers.size() >= max_size)
+	{
+		throw std::length_error("Span is already full");
+	}
+	numbers.push_back(number);
 }
 
 /*
@@ -59,40 +59,38 @@ but it is less efficient for smaller datasets.
 */
 int Span::shortestSpan() const
 {
-    if (numbers.size() < 2)
-    {
-        throw std::length_error("Span must contain at least two elements to calculate");
-    }
+	if (numbers.size() < 2)
+	{
+		throw std::length_error("Span must contain at least two elements to calculate");
+	}
 
-    int min_span = std::numeric_limits<int>::max();
-    for (size_t i = 0; i < numbers.size() - 1; ++i)
-    {
-        for (size_t j = i + 1; j < numbers.size(); ++j)
-        {
-            int span = std::abs(numbers[i] - numbers[j]);
-            if (span < min_span)
-            {
-                min_span = span;
-            }
-        }
-    }
-
-    return min_span;
+	int min_span = std::numeric_limits<int>::max();
+	for (size_t i = 0; i < numbers.size() - 1; ++i)
+	{
+		for (size_t j = i + 1; j < numbers.size(); ++j)
+		{
+			int span = std::abs(numbers[i] - numbers[j]);
+			if (span < min_span)
+			{
+				min_span = span;
+			}
+		}
+	}
+	return min_span;
 }
 
 int Span::longestSpan() const
 {
-    if (numbers.size() < 2)
-    {
-        throw std::length_error("Span must contain at least two elements to calculate");
-    }
+	if (numbers.size() < 2)
+	{
+		throw std::length_error("Span must contain at least two elements to calculate");
+	}
 
-    int min_elem = *std::min_element(numbers.begin(), numbers.end());
-    int max_elem = *std::max_element(numbers.begin(), numbers.end());
+	int min_elem = *std::min_element(numbers.begin(), numbers.end());
+	int max_elem = *std::max_element(numbers.begin(), numbers.end());
 
-    return max_elem - min_elem;
+	return max_elem - min_elem;
 }
-
 
 /*
 shortestSpan() and longestSpan()
@@ -110,24 +108,24 @@ elements in the container:
 /*
 int Span::shortestSpan() const
 {
-    if (numbers.size() < 2)
-    {
-        throw std::length_error("Span must contain at least two elements to calculate");
-    }
+	if (numbers.size() < 2)
+	{
+		throw std::length_error("Span must contain at least two elements to calculate");
+	}
 
-    std::vector<int> sorted(numbers);
-    std::sort(sorted.begin(), sorted.end());
+	std::vector<int> sorted(numbers);
+	std::sort(sorted.begin(), sorted.end());
 
-    int min_span = std::numeric_limits<int>::max();
-    for (size_t i = 1; i < sorted.size(); ++i)
-    {
-        int span = sorted[i] - sorted[i - 1];
-        if (span < min_span)
-        {
-            min_span = span;
-        }
-    }
+	int min_span = std::numeric_limits<int>::max();
+	for (size_t i = 1; i < sorted.size(); ++i)
+	{
+		int span = sorted[i] - sorted[i - 1];
+		if (span < min_span)
+		{
+			min_span = span;
+		}
+	}
 
-    return min_span;
+	return min_span;
 }
 */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:45:03 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/10 08:04:04 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/11 09:42:42 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main()
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
-    //[...]
     mstack.push(0);
 
     MutantStack<int>::iterator it = mstack.begin();
@@ -48,9 +47,23 @@ int main()
 }
 
 /*
+Push 5 and 17 onto the stack:
+
+Stack after operations: [5, 17]
+Print the top element and pop it:
+
+Output: 17
+Stack after pop: [5]
+Print the size of the stack:
+
+Output: 1 (as there's only one element, 5)
+Push 3, 5, 737, and 0 onto the stack:
+
+Stack after these pushes: [5, 3, 5, 737, 0]
+
 The stack initially contains 5 and 17 (with 17 at the top). After popping
 the top element (17), 5 remains.
-You then push 3, 5, 737, and 0 onto the stack.
+then push 3, 5, 737, and 0 onto the stack.
 When iterating from the beginning (begin()) to the end (end()),
 the elements are printed in the order 5 (bottom), 3, 5, 737, and 0 (top).
 */

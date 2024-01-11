@@ -3,56 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:41:00 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/10 08:37:37 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/11 09:24:30 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// main.cpp
 #include "Span.hpp"
 #include <iostream>
 
 int main()
 {
-    try
-    {
-        Span sp = Span(5); //creates an instance of the Span class named sp with a maximum capacity of 5 integers
+	try
+	{
+		Span sp = Span(5); // creates an instance of the Span class named sp with a maximum capacity of 5 integers
 
-        sp.addNumber(6);
-        sp.addNumber(3);
-        sp.addNumber(17);
-        sp.addNumber(9);
-        sp.addNumber(11);
+		sp.addNumber(6);
+		sp.addNumber(3);
+		sp.addNumber(17);
+		sp.addNumber(9);
+		sp.addNumber(11);
 
-        std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
-        std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
 
-        /*
-        Example of adding a range of numbers
-        std::vector<int> named moreNumbers is created and filled with 10,000 integers,
-        each being double its index (0, 2, 4, ..., 19998).
-        */
-        std::vector<int> moreNumbers;
-        // Fill moreNumbers with some numbers
-        for (int i = 0; i < 10000; ++i)
-        {
-            moreNumbers.push_back(i * 2);
-        }
+		/*
+		Example of adding a range of numbers
+		std::vector<int> named moreNumbers is created and filled with 10,000 integers,
+		each being double its index (0, 2, 4, ..., 19998).
+		*/
+		std::vector<int> moreNumbers;
+		for (int i = 0; i < 10000; ++i)
+		{
+			moreNumbers.push_back(i * 2);
+		}
 
-        Span largeSpan(10000);
-        largeSpan.addNumber(moreNumbers.begin(), moreNumbers.end());
+		Span largeSpan(10000);
+		largeSpan.addNumber(moreNumbers.begin(), moreNumbers.end());
 
-        std::cout << "Shortest Span of largeSpan: " << largeSpan.shortestSpan() << std::endl;
-        std::cout << "Longest Span of largeSpan: " << largeSpan.longestSpan() << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    }
+		std::cout << "Shortest Span of largeSpan: " << largeSpan.shortestSpan() << std::endl;
+		std::cout << "Longest Span of largeSpan: " << largeSpan.longestSpan() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
 
-    return 0;
+	return 0;
 }
 /*
 shortest and longest spans between the numbers added to sp. The shortest span
