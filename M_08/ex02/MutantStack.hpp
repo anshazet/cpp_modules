@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:44:47 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/10 07:41:22 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/11 10:03:59 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ class MutantStack : public std::stack<T>
 {
 public:
 	typedef typename std::stack<T>::container_type::iterator iterator;
-	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+	// typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
-	MutantStack() : std::stack<T>() {}
-	MutantStack(const MutantStack &src) : std::stack<T>(src) {}
-	MutantStack &operator=(const MutantStack &rhs)
-	{
-		std::stack<T>::operator=(rhs);
-		return *this;
-	}
-	~MutantStack() {}
+	// MutantStack() : std::stack<T>() {}
+	// MutantStack(const MutantStack &src) : std::stack<T>(src) {}
+	// MutantStack &operator=(const MutantStack &rhs)
+	// {
+	// 	std::stack<T>::operator=(rhs);
+	// 	return *this;
+	// }
+	// ~MutantStack() {}
 
 	iterator begin()
 	{
@@ -40,14 +40,14 @@ public:
 	{
 		return this->c.end();
 	}
-	const_iterator begin() const
-	{
-		return this->c.begin();
-	}
-	const_iterator end() const
-	{
-		return this->c.end();
-	}
+	// const_iterator begin() const
+	// {
+	// 	return this->c.begin();
+	// }
+	// const_iterator end() const
+	// {
+	// 	return this->c.end();
+	// }
 };
 
 #endif // MUTANTSTACK_HPP
