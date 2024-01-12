@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ashalagi <ashalagi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:45:03 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/11 09:42:42 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/11 14:07:16 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 #include <iostream>
+#include <list>
 
 int main()
 {
@@ -19,11 +20,9 @@ int main()
 
     mstack.push(5);
     mstack.push(17);
-
     std::cout << mstack.top() << std::endl;
 
     mstack.pop();
-
     std::cout << mstack.size() << std::endl;
 
     mstack.push(3);
@@ -36,13 +35,40 @@ int main()
 
     ++it;
     --it;
-
     while (it != ite)
     {
         std::cout << *it << std::endl;
         ++it;
     }
     std::stack<int> s(mstack);
+    std::cout << std::endl;
+
+    // Copy contents of MutantStack to a std::list
+    std::list<int> listFromStack(mstack.begin(), mstack.end());
+    std::cout << "Contents of std::list copied from MutantStack: ";
+    for (std::list<int>::iterator it = listFromStack.begin(); it != listFromStack.end(); ++it)
+    {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+
+    // Additional test - replacing MutantStack with std::list
+    std::list<int> testList;
+    testList.push_back(5); 
+    testList.push_back(17);
+    testList.pop_back();
+    testList.push_back(3);
+    testList.push_back(5);
+    testList.push_back(737);
+    testList.push_back(0);
+
+    std::cout << "Contents of std::list for comparison: ";
+    for (std::list<int>::iterator it = testList.begin(); it != testList.end(); ++it)
+    {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+
     return 0;
 }
 
