@@ -6,18 +6,16 @@
 /*   By: ashalagi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 07:22:58 by ashalagi          #+#    #+#             */
-/*   Updated: 2024/01/16 11:38:46 by ashalagi         ###   ########.fr       */
+/*   Updated: 2024/01/11 07:35:57 by ashalagi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PMERGEME_HPP
 #define PMERGEME_HPP
 
-# include <iostream>
-# include <list>
-# include <vector>
-# include <ctime>
-# include <algorithm>
+#include <vector>
+#include <list>
+#include <string>
 
 class PmergeMe
 {
@@ -27,9 +25,11 @@ public:
 	PmergeMe &operator=(const PmergeMe &other);
 	~PmergeMe();
 
-	void    mergeInsertSort(std::vector<int> &vector);
+	std::string sortWithVector(const std::vector<int> &numbers) const;
+	std::string sortWithList(const std::list<int> &numbers) const;
 
 private:
+	// Helper methods for the Ford-Johnson algorithm could be declared here.
 };
 
 #endif // PMERGEME_HPP
